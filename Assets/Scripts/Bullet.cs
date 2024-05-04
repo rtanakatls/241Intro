@@ -14,6 +14,11 @@ public class Bullet : MonoBehaviour
 
     }
 
+    public void SetDirection(Vector2 direction)
+    {
+        this.direction = direction;
+    }
+
     void Update()
     {
         rb2d.velocity = direction.normalized * speed;

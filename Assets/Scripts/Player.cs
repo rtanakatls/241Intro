@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
         {
             GameObject obj = Instantiate(bulletPrefab);
             obj.transform.position = transform.position;
+            obj.GetComponent<Bullet>().SetDirection(direction);
         }
 
     }
