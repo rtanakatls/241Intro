@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Cure
   - PlayerBullet
+  - Hazard
   layers:
   - Default
   - TransparentFX

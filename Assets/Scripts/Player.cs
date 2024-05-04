@@ -17,6 +17,11 @@ public class Player : MonoBehaviour
         direction = Vector2.up;
     }
 
+    private void Start()
+    {
+        UIController.Instance.SetLifeText(life);
+    }
+
     void Update()
     {
         Move();
@@ -56,6 +61,11 @@ public class Player : MonoBehaviour
         {
             life = maxLife;
         }
+        if (life < 0)
+        {
+            life = 0;
+        }
+        UIController.Instance.SetLifeText(life);
         if (life <= 0)
         {
             Destroy(gameObject);
@@ -64,11 +74,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy"))
         {
-            ChangeLife(-1);
-            Destroy(collision.gameObject);
+            ChangeLife(-collision.gameObject.GetComponent<Damage>().GetDamage());
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
