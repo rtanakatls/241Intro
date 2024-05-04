@@ -359,6 +359,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2216230409492559909, guid: 4978ad45332cf0a40ad0c71b8f041921, type: 3}
   shootDelay: 0.5
   shootingRange: 5
+  speed: 3
 --- !u!60 &156149346
 PolygonCollider2D:
   m_ObjectHideFlags: 0
