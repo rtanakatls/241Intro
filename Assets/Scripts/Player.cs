@@ -37,8 +37,13 @@ public class Player : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector2 direction = new Vector2(horizontal, vertical).normalized;
-        rb2d.velocity = direction * speed;
+
+        if (horizontal != 0 || vertical != 0)
+        {
+            direction= new Vector2(horizontal, vertical).normalized;
+        }
+
+        rb2d.velocity = new Vector2(horizontal, vertical).normalized * speed;
 
 
     }
