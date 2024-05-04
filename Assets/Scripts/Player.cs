@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private int life;
     [SerializeField] private int maxLife;
+    private int score;
     [SerializeField] private GameObject bulletPrefab;
     private Vector2 direction;
 
@@ -72,6 +74,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void ChangeScore(int value)
+    {
+        score += value;
+
+        if (score >= 10)
+        {
+            SceneManager.LoadScene("Level1Scene");
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Hazard") || collision.gameObject.CompareTag("Enemy"))
@@ -87,6 +99,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Cure"))
         {
             ChangeLife(1);
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Score"))
+        {
+            ChangeScore(4);
             Destroy(collision.gameObject);
         }
     }

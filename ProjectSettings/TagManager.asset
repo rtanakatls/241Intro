@@ -8,6 +8,7 @@ TagManager:
   - Cure
   - PlayerBullet
   - Hazard
+  - Score
   layers:
   - Default
   - TransparentFX
