@@ -7,11 +7,15 @@ public class PlayerScore : MonoBehaviour
 {
     private int score;
 
+    private void Start()
+    {
+        UIController.Instance.SetScoreText(score);
+    }
 
     private void ChangeScore(int value)
     {
         score += value;
-
+        UIController.Instance.SetScoreText(score);
         if (score >= 10)
         {
             SceneManager.LoadScene("Level1Scene");

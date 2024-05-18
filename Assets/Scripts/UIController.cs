@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
 
 
     [SerializeField] private TextMeshProUGUI lifeText;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     private void Awake()
     {
@@ -20,5 +21,10 @@ public class UIController : MonoBehaviour
     public void SetLifeText(int life)
     {
         lifeText.text = $"Life: {life}";
+    }
+
+    public void SetScoreText(int score)
+    {
+        scoreText.text = $"Score: {score}";
     }
 }

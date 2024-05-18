@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class BossPhase1 : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     [SerializeField] private float speed;
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         if (timer >= changeDirectionTime)
         {
             timer = 0;
-            direction.x *=  -1;
+            direction.x *= -1;
         }
 
         if (goingUp)
