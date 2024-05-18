@@ -19,6 +19,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void Start()
     {
+       
         player = GameObject.Find("Player").transform;
     }
 
