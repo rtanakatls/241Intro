@@ -46,6 +46,7 @@ public class PlayerLife : MonoBehaviour
         if (life <= 0)
         {
             Destroy(gameObject);
+            LoadingScreenController.GetInstance().ShowLoadingScreen("MainMenuScene");
         }
     }
 

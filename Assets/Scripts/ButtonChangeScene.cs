@@ -15,6 +15,6 @@ public class ButtonChangeScene : MonoBehaviour
 
     void Change()
     {
-        SceneManager.LoadScene(sceneName);
+        LoadingScreenController.GetInstance().ShowLoadingScreen("SampleScene");
     }
 }
